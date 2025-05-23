@@ -10,11 +10,11 @@ const HeroSection = () => {
       <div className="absolute inset-0 opacity-5">
         <Image 
           src="https://placehold.co/1920x1080.png" 
-          alt="Legal Background" 
+          alt="Legal Technology Background" 
           layout="fill" 
           objectFit="cover"
           priority
-          data-ai-hint="legal courtroom silhouette" 
+          data-ai-hint="abstract technology" 
         />
       </div>
       <div className="container mx-auto px-6 text-center relative z-10">
