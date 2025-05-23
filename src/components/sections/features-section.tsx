@@ -1,36 +1,37 @@
+
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Briefcase, CalendarDays, FileText, Gavel, Lightbulb, Library, Search, TrendingUp, BrainCircuit, FolderKanban } from "lucide-react";
+import { BrainCircuit, CalendarDays, FileText, FolderKanban, Lightbulb, Library, Users, ShieldCheck, Zap } from "lucide-react";
 
 const features = [
   {
     icon: <FileText className="h-10 w-10 text-primary mb-4" />,
-    title: "AI Legal Drafting",
-    description: "Generate accurate legal documents, notices, and petitions with AI assistance, tailored to Indian legal standards.",
+    title: "AI-Powered Drafting",
+    description: "Generate precise legal documents, notices, and petitions efficiently, tailored to Indian legal nuances.",
   },
   {
     icon: <FolderKanban className="h-10 w-10 text-primary mb-4" />,
-    title: "Case Workspace (CaseSpace™)",
-    description: "Organize all your case files, notes, and client communications in one secure, collaborative digital workspace.",
+    title: "Unified Case Workspace",
+    description: "Organize all case files, notes, and client communications in one secure, collaborative digital environment.",
   },
   {
     icon: <Library className="h-10 w-10 text-primary mb-4" />,
-    title: "Legal Research Reimagined",
-    description: "Access a vast database of Indian case law and statutes with AI-powered semantic search for faster, more relevant results.",
+    title: "Intelligent Legal Research",
+    description: "Access a vast database of Indian case law and statutes with AI-driven semantic search for faster, relevant results.",
   },
   {
     icon: <Lightbulb className="h-10 w-10 text-primary mb-4" />,
-    title: "Argument Builder",
-    description: "Construct compelling legal arguments by leveraging AI insights and relevant case law precedents.",
+    title: "Strategic Argument Builder",
+    description: "Construct compelling legal arguments by leveraging AI-driven insights and relevant case law precedents.",
   },
   {
     icon: <BrainCircuit className="h-10 w-10 text-primary mb-4" />,
-    title: "Judgment Prediction",
-    description: "Gain AI-driven insights into potential case outcomes based on argument types and historical data.",
+    title: "Insightful Judgment Prediction",
+    description: "Gain AI-driven foresight into potential case outcomes based on argument types and historical data analysis.",
   },
   {
     icon: <CalendarDays className="h-10 w-10 text-primary mb-4" />,
-    title: "Court Calendar Integration",
-    description: "Seamlessly manage your court dates, deadlines, and client meetings with smart calendar integration.",
+    title: "Smart Court Calendar",
+    description: "Manage court dates, deadlines, and client meetings seamlessly with intelligent calendar integration.",
   },
 ];
 
@@ -40,21 +41,21 @@ const FeaturesSection = () => {
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-serif font-bold text-foreground">
-            Core Features
+            How Lexamplify Elevates Your Practice
           </h2>
-          <p className="text-lg text-muted-foreground mt-4 max-w-2xl mx-auto">
-            Lexamplify offers a suite of AI-powered tools to revolutionize your legal practice.
+          <p className="text-lg text-muted-foreground mt-4 max-w-3xl mx-auto">
+            Discover a comprehensive suite of AI-powered tools designed to revolutionize your legal workflow, enhance productivity, and drive success.
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {features.map((feature, index) => (
-            <Card key={index} className="bg-card text-card-foreground shadow-lg hover:shadow-xl transition-shadow duration-300 ease-in-out transform hover:-translate-y-1 flex flex-col">
-              <CardHeader className="items-center text-center">
+            <Card key={index} className="bg-card text-card-foreground shadow-lg hover:shadow-xl transition-shadow duration-300 ease-in-out transform hover:-translate-y-1 flex flex-col rounded-xl">
+              <CardHeader className="items-center text-center pt-8">
                 {feature.icon}
-                <CardTitle className="font-sans text-2xl font-semibold text-foreground">{feature.title}</CardTitle>
+                <CardTitle className="font-sans text-xl font-semibold text-foreground">{feature.title}</CardTitle>
               </CardHeader>
-              <CardContent className="text-center flex-grow">
-                <p className="text-muted-foreground">{feature.description}</p>
+              <CardContent className="text-center flex-grow px-6 pb-8">
+                <p className="text-muted-foreground text-sm">{feature.description}</p>
               </CardContent>
             </Card>
           ))}

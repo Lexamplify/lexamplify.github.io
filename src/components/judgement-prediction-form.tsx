@@ -1,3 +1,4 @@
+
 'use client';
 
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -18,7 +19,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { useToast } from "@/hooks/use-toast";
-import { Loader2, AlertTriangle, CheckCircle2 } from "lucide-react";
+import { Loader2, AlertTriangle, CheckCircle2, Sparkles } from "lucide-react";
 
 const formSchema = z.object({
   legalArgumentType: z.string().min(10, {
@@ -72,64 +73,78 @@ export function JudgementPredictionForm() {
   return (
     <div className="space-y-8">
       <Form {...form}>
-        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6 bg-card p-8 rounded-lg shadow-xl">
+        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
           <FormField
             control={form.control}
             name="legalArgumentType"
             render={({ field }) => (
               <FormItem>
-                <FormLabel className="text-card-foreground text-lg">Type of Legal Argument</FormLabel>
+                <FormLabel className="text-card-foreground text-base">Describe the Legal Argument Type</FormLabel>
                 <FormControl>
                   <Input 
-                    placeholder="e.g., 'Breach of contract due to non-delivery of goods'" 
+                    placeholder="e.g., 'Anticipatory bail application in a cheating case'" 
                     {...field} 
-                    className="bg-background focus:ring-primary text-base"
+                    className="bg-input focus:ring-primary text-base"
                   />
                 </FormControl>
                 <FormMessage />
               </FormItem>
             )}
           />
-          <Button type="submit" className="w-full text-lg py-3 transition-all duration-300 ease-in-out hover:shadow-lg" disabled={isLoading}>
+          <Button type="submit" className="w-full text-lg py-3 transition-all duration-300 ease-in-out hover:shadow-lg group" disabled={isLoading}>
             {isLoading ? (
               <>
-                <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                Analyzing...
+                <Loader2 className="mr-2 h-5 w-5 animate-spin" />
+                Analyzing with AI...
               </>
             ) : (
-              "Get AI Prediction"
+              <>
+                <Sparkles className="mr-2 h-5 w-5 transition-transform group-hover:scale-110" />
+                Get AI Prediction
+              </>
             )}
           </Button>
         </form>
       </Form>
 
-      {error && (
-        <Card className="border-destructive bg-destructive/10">
+      {isLoading && (
+        <div className="text-center py-4">
+          <Loader2 className="h-8 w-8 animate-spin text-primary mx-auto" />
+          <p className="text-muted-foreground mt-2">Our AI is processing your request...</p>
+        </div>
+      )}
+
+      {error && !isLoading && (
+        <Card className="border-destructive bg-destructive/10 animate-fade-in">
           <CardHeader>
             <CardTitle className="text-destructive flex items-center gap-2">
-              <AlertTriangle /> Prediction Error
+              <AlertTriangle /> Error Generating Prediction
             </CardTitle>
           </CardHeader>
           <CardContent>
-            <p className="text-destructive">{error}</p>
+            <p className="text-destructive-foreground">{error}</p>
           </CardContent>
         </Card>
       )}
 
-      {predictionResult && (
-        <Card className="shadow-lg animate-fade-in">
-          <CardHeader>
-            <CardTitle className="text-2xl font-serif text-primary">AI Judgment Prediction Result</CardTitle>
-            <CardDescription>Based on the provided legal argument type.</CardDescription>
+      {predictionResult && !isLoading && (
+        <Card className="shadow-lg animate-fade-in border-primary/30">
+          <CardHeader className="bg-primary/5">
+            <CardTitle className="text-xl font-serif text-primary">AI Judgment Prediction</CardTitle>
+            <CardDescription>Analysis based on the argument: "{form.getValues("legalArgumentType")}"</CardDescription>
           </CardHeader>
-          <CardContent className="space-y-4">
+          <CardContent className="space-y-6 pt-6">
             <div>
-              <h4 className="font-semibold text-foreground text-lg mb-1">Likely Outcome:</h4>
-              <p className="text-muted-foreground bg-secondary p-3 rounded-md">{predictionResult.likelyOutcome}</p>
+              <h4 className="font-semibold text-foreground text-md mb-1">Predicted Likely Outcome:</h4>
+              <div className="bg-secondary p-4 rounded-md shadow-sm">
+                <p className="text-secondary-foreground">{predictionResult.likelyOutcome}</p>
+              </div>
             </div>
             <div>
-              <h4 className="font-semibold text-foreground text-lg mb-1">Reasoning:</h4>
-              <p className="text-muted-foreground bg-secondary p-3 rounded-md whitespace-pre-wrap">{predictionResult.reasoning}</p>
+              <h4 className="font-semibold text-foreground text-md mb-1">Reasoning & Basis:</h4>
+              <div className="bg-secondary p-4 rounded-md shadow-sm">
+                <p className="text-secondary-foreground whitespace-pre-wrap text-sm">{predictionResult.reasoning}</p>
+              </div>
             </div>
           </CardContent>
         </Card>
