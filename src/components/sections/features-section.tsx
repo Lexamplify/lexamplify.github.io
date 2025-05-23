@@ -2,6 +2,10 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { BrainCircuit, CalendarDays, FileText, FolderKanban, Lightbulb, Library, Users, ShieldCheck, Zap } from "lucide-react";
 
+// This file is currently not used in page.tsx as per the new Figma design.
+// It can be repurposed or removed if the new sections (AlternatingFeatures, IconBenefits, DetailedFeatures) cover all needs.
+// Keeping the content for now in case it's needed later or for a different page.
+
 const features = [
   {
     icon: <FileText className="h-10 w-10 text-primary mb-4" />,

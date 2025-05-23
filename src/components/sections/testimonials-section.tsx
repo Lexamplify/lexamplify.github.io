@@ -1,73 +1,41 @@
 
 import Image from "next/image";
-import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import { Quote } from "lucide-react";
 
-const testimonials = [
-  {
-    quote: "Lexamplify has revolutionized how our firm handles legal research. The AI insights are incredibly accurate and have saved us countless hours.",
-    name: "Adv. Priya Sharma",
-    title: "Partner, Sharma & Associates",
-    imageUrl: "https://placehold.co/100x100.png",
-    dataAiHint: "female lawyer portrait"
-  },
-  {
-    quote: "The AI drafting tool is a game-changer. It helps us create initial drafts much faster, allowing us to focus on strategic aspects of the case.",
-    name: "Mr. Arjun Singh",
-    title: "Senior Counsel, LexCorp India",
-    imageUrl: "https://placehold.co/100x100.png",
-    dataAiHint: "male lawyer portrait"
-  },
-  {
-    quote: "CaseSpace has made team collaboration so much smoother. All our case files and communications are now in one secure place.",
-    name: "Ms. Ananya Reddy",
-    title: "Independent Practitioner",
-    imageUrl: "https://placehold.co/100x100.png",
-    dataAiHint: "professional woman portrait"
-  },
-];
+const testimonial = {
+  quote: "We are a future-focused law firm and have been looking for an AI solution that understands the Indian legal system. Lexamplify has been a game-changer – truly built by lawyers, for lawyers. It's a must-have for any modern Indian law firm.",
+  name: "Mr. Rohan Mehra",
+  title: "Managing Partner, Lex Legal Chambers",
+  imageUrl: "https://placehold.co/800x600.png", // Using a larger placeholder for the side image
+  dataAiHint: "modern office interior", // Hint for the background image, not a portrait
+};
 
 const TestimonialsSection = () => {
   return (
-    <section id="testimonials" className="bg-secondary">
+    <section id="testimonials" className="bg-secondary py-16 md:py-24">
       <div className="container mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-serif font-bold text-foreground">
-            What Our Users Say
-          </h2>
-          <p className="text-lg text-muted-foreground mt-4 max-w-2xl mx-auto">
-            Hear from legal professionals who are transforming their practice with Lexamplify.
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {testimonials.map((testimonial, index) => (
-            <Card key={index} className="bg-card text-card-foreground shadow-xl flex flex-col rounded-xl overflow-hidden transform hover:-translate-y-1 transition-all duration-300">
-              <CardHeader className="p-6">
-                <Quote className="h-8 w-8 text-primary/50 mb-4" />
-                <p className="text-muted-foreground italic leading-relaxed">"{testimonial.quote}"</p>
-              </CardHeader>
-              <CardContent className="flex-grow" />
-              <CardFooter className="bg-muted/30 p-6 mt-auto">
-                <div className="flex items-center">
-                  <div className="relative w-12 h-12 rounded-full overflow-hidden mr-4 border-2 border-primary/30">
-                    <Image
-                      src={testimonial.imageUrl}
-                      alt={testimonial.name}
-                      layout="fill"
-                      objectFit="cover"
-                      data-ai-hint={testimonial.dataAiHint}
-                    />
-                  </div>
-                  <div>
-                    <p className="font-semibold text-foreground">{testimonial.name}</p>
-                    <p className="text-sm text-primary">{testimonial.title}</p>
-                  </div>
-                </div>
-              </CardFooter>
-            </Card>
-          ))}
-        </div>
+        <Card className="bg-card text-card-foreground shadow-xl rounded-xl overflow-hidden md:grid md:grid-cols-2 items-center border-transparent">
+          <div className="relative h-64 md:h-full w-full md:aspect-[3/4]">
+            <Image
+              src={testimonial.imageUrl}
+              alt="Professional legal environment"
+              layout="fill"
+              objectFit="cover"
+              data-ai-hint={testimonial.dataAiHint}
+            />
+          </div>
+          <div className="p-8 md:p-12 lg:p-16">
+            <Quote className="h-10 w-10 text-primary/60 mb-6" />
+            <blockquote className="text-xl md:text-2xl font-medium text-foreground leading-relaxed mb-6">
+              "{testimonial.quote}"
+            </blockquote>
+            <div className="mt-6">
+              <p className="font-semibold text-lg text-foreground">{testimonial.name}</p>
+              <p className="text-md text-primary">{testimonial.title}</p>
+            </div>
+          </div>
+        </Card>
       </div>
     </section>
   );

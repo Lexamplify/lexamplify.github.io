@@ -1,36 +1,39 @@
 
 import Image from "next/image";
-import { Scale } from "lucide-react"; // Example icon
+import { Scale } from "lucide-react";
 
 const logos = [
-  { name: "Major Law Firm", src: "https://placehold.co/150x60.png?text=Firm+A", dataAiHint: "law firm logo" },
-  { name: "Legal Tech Innovator", src: "https://placehold.co/150x60.png?text=InnovateLP", dataAiHint: "tech company logo" },
-  { name: "Corporate Legal Dept", src: "https://placehold.co/150x60.png?text=CorpLegal", dataAiHint: "corporate logo" },
-  { name: "Advocate Chambers", src: "https://placehold.co/150x60.png?text=Advocates+Inc", dataAiHint: "legal chambers logo" },
-  { name: "Lexamplify Placeholder", src: "", icon: <Scale className="h-10 w-auto text-muted-foreground" />, dataAiHint: "company logo" }, // Placeholder for Lexamplify or similar
+  { name: "Legal Firm One", src: "https://placehold.co/150x60.png?text=Firm+Alpha", dataAiHint: "law firm logo" },
+  { name: "Tech Innovators Co.", src: "https://placehold.co/150x60.png?text=InnovateLLP", dataAiHint: "tech company logo" },
+  { name: "Corporate Solutions Ltd.", src: "https://placehold.co/150x60.png?text=CorpLegal+Global", dataAiHint: "corporate logo" },
+  { name: "Advocate Chambers Group", src: "https://placehold.co/150x60.png?text=Chambers+United", dataAiHint: "legal chambers logo" },
+  { name: "Justice Tech", src: "https://placehold.co/150x60.png?text=JusticeTech", dataAiHint: "legal tech logo" },
 ];
 
 const TrustedBySection = () => {
   return (
-    <section id="trusted-by" className="py-12 bg-background">
+    <section id="trusted-by" className="py-16 bg-secondary">
       <div className="container mx-auto px-6">
-        <h3 className="text-center text-sm font-semibold text-muted-foreground uppercase tracking-wider mb-8">
-          Trusted by Legal Professionals & Organizations
-        </h3>
-        <div className="flex flex-wrap justify-center items-center gap-x-12 gap-y-8">
-          {logos.map((logo, index) => (
-            <div key={index} className="opacity-70 hover:opacity-100 transition-opacity" title={logo.name}>
+        <h2 className="text-3xl md:text-4xl font-bold text-center text-foreground mb-4">
+          Why Lexamplify?
+        </h2>
+        <p className="text-center text-muted-foreground text-lg mb-12 max-w-2xl mx-auto">
+          We are committed to empowering legal professionals with tools that are not just technologically advanced, but also intuitive and deeply integrated into the realities of legal practice in India.
+        </p>
+        <div className="flex flex-wrap justify-center items-center gap-x-10 sm:gap-x-16 gap-y-8">
+          {logos.map((logo) => (
+            <div key={logo.name} className="opacity-75 hover:opacity-100 transition-opacity" title={logo.name}>
               {logo.src ? (
                 <Image 
                   src={logo.src} 
                   alt={logo.name} 
-                  width={150} 
-                  height={60} 
+                  width={140} 
+                  height={50} 
                   className="object-contain"
                   data-ai-hint={logo.dataAiHint}
                 />
               ) : (
-                logo.icon && <div className="w-[150px] h-[60px] flex items-center justify-center">{logo.icon}</div>
+                logo.icon && <div className="w-[140px] h-[50px] flex items-center justify-center">{logo.icon}</div>
               )}
             </div>
           ))}

@@ -4,17 +4,13 @@ import Link from 'next/link';
 import LexamplifyLogo from '@/components/lexamplify-logo';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
-import { Menu, ArrowRight } from 'lucide-react';
+import { Menu, LogIn, CalendarPlus, Tag } from 'lucide-react';
 import { useState } from 'react';
 
 const navLinks = [
-  { href: '#home', label: 'Home' },
-  { href: '#features', label: 'Features' },
-  { href: '#value-prop', label: 'Why Lexamplify?' },
-  { href: '#ai-prediction', label: 'AI Prediction' },
-  { href: '#testimonials', label: 'Testimonials' },
-  { href: '#about', label: 'About Us' },
-  { href: '#contact', label: 'Contact' },
+  { href: '#contact', label: 'Book a Demo', icon: <CalendarPlus className="mr-2 h-4 w-4"/> },
+  { href: '#', label: 'Pricing', icon: <Tag className="mr-2 h-4 w-4"/> },
+  { href: '#', label: 'Login', icon: <LogIn className="mr-2 h-4 w-4"/> },
 ];
 
 const Header = () => {
@@ -31,22 +27,15 @@ const Header = () => {
           <LexamplifyLogo />
         </Link>
         
-        <nav className="hidden md:flex gap-6 items-center">
-          {navLinks.map((link) => (
-            <Link
-              key={link.label}
-              href={link.href}
-              className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors"
-            >
-              {link.label}
-            </Link>
+        <nav className="hidden md:flex gap-4 items-center">
+          {navLinks.map((link, index) => (
+            <Button key={link.label} asChild variant={index === 0 ? "default" : "ghost"} size="sm" className={index === 0 ? "transition-all duration-300 ease-in-out hover:shadow-lg group" : "text-foreground/80 hover:text-primary"}>
+              <Link href={link.href}>
+                {link.icon}
+                {link.label}
+              </Link>
+            </Button>
           ))}
-          <Button asChild size="sm" className="transition-all duration-300 ease-in-out hover:shadow-lg group">
-            <Link href="#contact">
-              Join Waitlist
-              <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-            </Link>
-          </Button>
         </nav>
 
         <div className="md:hidden">
@@ -62,23 +51,15 @@ const Header = () => {
                 <Link href="#home" className="mb-6 flex items-center" onClick={handleLinkClick}>
                   <LexamplifyLogo />
                 </Link>
-                <nav className="flex flex-col space-y-4">
-                  {navLinks.map((link) => (
-                    <Link
-                      key={link.label}
-                      href={link.href}
-                      className="text-lg font-medium text-foreground/80 hover:text-primary transition-colors"
-                      onClick={handleLinkClick}
-                    >
-                      {link.label}
-                    </Link>
+                <nav className="flex flex-col space-y-3">
+                  {navLinks.map((link, index) => (
+                     <Button key={link.label} asChild variant={index === 0 ? "default" : "ghost"} className="justify-start text-lg py-3" onClick={handleLinkClick}>
+                        <Link href={link.href}>
+                         {link.icon}
+                         {link.label}
+                        </Link>
+                    </Button>
                   ))}
-                  <Button asChild className="mt-4 transition-all duration-300 ease-in-out hover:shadow-lg group" onClick={handleLinkClick}>
-                    <Link href="#contact">
-                      Join Waitlist
-                      <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                    </Link>
-                  </Button>
                 </nav>
               </div>
             </SheetContent>

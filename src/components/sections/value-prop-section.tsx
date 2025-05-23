@@ -4,6 +4,10 @@ import { ShieldCheck, Zap, Users, TrendingUp, Scale, ChevronsRight } from "lucid
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 
+// This file is currently not used in page.tsx as per the new Figma design.
+// It has been replaced by AlternatingFeaturesSection and IconBenefitsSection.
+// Keeping the content for now in case it's needed later or for a different page.
+
 const valueProps = [
   {
     icon: <Zap className="h-10 w-10 text-primary" />,
@@ -86,3 +90,4 @@ const ValuePropSection = () => {
 };
 
 export default ValuePropSection;
+
