@@ -21,19 +21,19 @@ const Header = () => {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/20 bg-white/80 backdrop-blur-lg supports-[backdrop-filter]:bg-white/60">
-      <div className="container flex h-20 max-w-screen-2xl items-center justify-between">
+      <div className="container flex h-20 max-w-screen-2xl items-center justify-between px-6 md:px-10"> {/* Increased padding here */}
         <Link href="/" className="flex items-center space-x-2" onClick={handleLinkClick}>
           <LexamplifyLogo />
         </Link>
         
-        <nav className="hidden md:flex gap-2 items-center"> {/* Reduced gap for closer buttons */}
+        <nav className="hidden md:flex gap-2 items-center">
           {navLinks.map((link, index) => (
             <Button 
               key={link.label} 
               asChild 
               variant={link.label === 'Book a Demo' ? "default" : "ghost"} 
               size="sm" 
-              className={`${link.label === 'Book a Demo' ? "transition-all duration-300 ease-in-out hover:shadow-lg group" : "text-foreground/80 hover:text-primary"} px-4 py-2`} // Added explicit padding
+              className={`${link.label === 'Book a Demo' ? "transition-all duration-300 ease-in-out hover:shadow-lg group" : "text-foreground/80 hover:text-primary"} px-4 py-2`}
             >
               <Link href={link.href}>
                 <>
@@ -55,16 +55,16 @@ const Header = () => {
             </SheetTrigger>
             <SheetContent side="right" className="w-full max-w-xs bg-background">
               <div className="p-4">
-                <Link href="/" className="mb-8 flex items-center" onClick={handleLinkClick}> {/* Increased mb */}
+                <Link href="/" className="mb-8 flex items-center" onClick={handleLinkClick}>
                   <LexamplifyLogo />
                 </Link>
-                <nav className="flex flex-col space-y-4"> {/* Increased space-y */}
+                <nav className="flex flex-col space-y-4">
                   {navLinks.map((link) => (
                      <Button 
                         key={link.label} 
                         asChild 
                         variant={link.label === 'Book a Demo' ? "default" : "ghost"} 
-                        className="justify-start text-base py-3" // Adjusted text size
+                        className="justify-start text-base py-3"
                         onClick={handleLinkClick}
                       >
                         <Link href={link.href}>

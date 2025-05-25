@@ -10,8 +10,8 @@ const LexamplifyLogo = (props: SVGProps<SVGSVGElement>) => (
     <style>
       {`
         .logo-text-lexamplify {
-          font-family: 'Playfair Display', serif;
-          font-size: 36px; /* Adjusted for new font */
+          font-family: var(--font-dm-sans), sans-serif; /* Changed to DM Sans */
+          font-size: 36px; 
           font-weight: 700;
           fill: hsl(var(--foreground)); /* Use theme foreground for text */
           letter-spacing: 0.5px;

@@ -1,43 +1,44 @@
 
 import LexamplifyLogo from '@/components/lexamplify-logo';
-import { Twitter, Linkedin, Facebook, ArrowRight } from 'lucide-react';
+// import { Twitter, Linkedin, Facebook } from 'lucide-react'; // Commented out social icons
+import { ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
-  const productLinks = [
-    { href: '#alternating-features', label: 'AI Drafting' },
-    { href: '#detailed-features', label: 'Case Management' },
-    { href: '#detailed-features', label: 'Legal Research' },
-    { href: '#', label: 'Pricing' },
-  ];
+  // const productLinks = [
+  //   { href: '#alternating-features', label: 'AI Drafting' },
+  //   { href: '#detailed-features', label: 'Case Management' },
+  //   { href: '#detailed-features', label: 'Legal Research' },
+  //   { href: '#', label: 'Pricing' },
+  // ];
 
-  const companyLinks = [
-    { href: '#', label: 'About Us' }, // Link to a future about page
-    { href: '#testimonials', label: 'Testimonials' },
-    { href: '#', label: 'Careers' }, // Future
-    { href: '#', label: 'Blog' }, // Future
-  ];
+  // const companyLinks = [
+  //   { href: '#', label: 'About Us' },
+  //   { href: '#testimonials', label: 'Testimonials' },
+  //   { href: '#', label: 'Careers' },
+  //   { href: '#', label: 'Blog' },
+  // ];
   
-  const resourcesLinks = [
-    { href: '#', label: 'Help Center' },
-    { href: '#', label: 'API Documentation' }, // Future
-    { href: '#', label: 'System Status' },
-  ];
+  // const resourcesLinks = [
+  //   { href: '#', label: 'Help Center' },
+  //   { href: '#', label: 'API Documentation' },
+  //   { href: '#', label: 'System Status' },
+  // ];
 
   const legalLinks = [
     { href: '#', label: 'Privacy Policy' },
     { href: '#', label: 'Terms of Service' },
-    { href: '#', label: 'Cookie Policy' }, 
+    // { href: '#', label: 'Cookie Policy' }, // Commented out Cookie Policy
   ];
 
-  const socialLinks = [
-    { href: '#', label: 'Twitter', icon: <Twitter size={20} /> },
-    { href: '#', label: 'LinkedIn', icon: <Linkedin size={20} /> },
-    { href: '#', label: 'Facebook', icon: <Facebook size={20} /> },
-  ];
+  // const socialLinks = [
+  //   { href: '#', label: 'Twitter', icon: <Twitter size={20} /> },
+  //   { href: '#', label: 'LinkedIn', icon: <Linkedin size={20} /> },
+  //   { href: '#', label: 'Facebook', icon: <Facebook size={20} /> },
+  // ];
 
 
   return (
@@ -45,72 +46,44 @@ const Footer = () => {
       <div className="container mx-auto px-6 py-16">
         <div className="bg-primary/10 p-8 md:p-12 rounded-xl text-center mb-16 shadow-lg">
           <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-3">
-            Unlock preferred pricing with a demo
+            Join Our Waitlist
           </h2>
           <p className="text-muted-foreground mb-6 max-w-xl mx-auto">
-            See Lexamplify in action and discover how our AI-powered tools can transform your legal practice.
+            Be the first to know when Lexamplify launches. Get exclusive early access and updates.
           </p>
           <Button asChild size="lg" className="group">
             <Link href="#contact">
               <>
-                Book a Demo
+                Join Waitlist
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </>
             </Link>
           </Button>
         </div>
 
-        <div className="grid grid-cols-1 gap-8 lg:grid-cols-5">
+        <div className="grid grid-cols-1 gap-8 lg:grid-cols-3"> {/* Adjusted grid for simpler layout */}
           <div className="lg:col-span-2">
             <LexamplifyLogo />
             <p className="mt-4 text-sm text-muted-foreground max-w-xs">
               Empowering India's legal professionals with AI-driven tools for enhanced efficiency and insight.
             </p>
-            <div className="mt-6 flex space-x-4">
+            {/* <div className="mt-6 flex space-x-4">
               {socialLinks.map(social => (
                 <Link key={social.label} href={social.href} aria-label={social.label} className="text-muted-foreground hover:text-primary transition-colors">
                   {social.icon}
                 </Link>
               ))}
-            </div>
+            </div> */}
           </div>
 
-          <div className="grid grid-cols-2 gap-8 sm:grid-cols-4 lg:col-span-3 lg:grid-cols-4">
-            <div>
-              <h3 className="text-sm font-semibold uppercase tracking-wider text-foreground">Product</h3>
-              <ul className="mt-4 space-y-2">
-                {productLinks.map(link => (
-                  <li key={link.label}><Link href={link.href} className="text-sm text-muted-foreground hover:text-primary transition-colors">{link.label}</Link></li>
-                ))}
-              </ul>
-            </div>
-            
-            <div>
-              <h3 className="text-sm font-semibold uppercase tracking-wider text-foreground">Company</h3>
-              <ul className="mt-4 space-y-2">
-                 {companyLinks.map(link => (
-                  <li key={link.label}><Link href={link.href} className="text-sm text-muted-foreground hover:text-primary transition-colors">{link.label}</Link></li>
-                ))}
-              </ul>
-            </div>
-
-            <div>
-              <h3 className="text-sm font-semibold uppercase tracking-wider text-foreground">Resources</h3>
-              <ul className="mt-4 space-y-2">
-                 {resourcesLinks.map(link => (
-                  <li key={link.label}><Link href={link.href} className="text-sm text-muted-foreground hover:text-primary transition-colors">{link.label}</Link></li>
-                ))}
-              </ul>
-            </div>
-
-            <div>
-              <h3 className="text-sm font-semibold uppercase tracking-wider text-foreground">Legal</h3>
-              <ul className="mt-4 space-y-2">
-                {legalLinks.map(link => (
-                  <li key={link.label}><Link href={link.href} className="text-sm text-muted-foreground hover:text-primary transition-colors">{link.label}</Link></li>
-                ))}
-              </ul>
-            </div>
+          {/* Simplified links section to only show Legal links */}
+          <div>
+            <h3 className="text-sm font-semibold uppercase tracking-wider text-foreground">Legal</h3>
+            <ul className="mt-4 space-y-2">
+              {legalLinks.map(link => (
+                <li key={link.label}><Link href={link.href} className="text-sm text-muted-foreground hover:text-primary transition-colors">{link.label}</Link></li>
+              ))}
+            </ul>
           </div>
         </div>
 
