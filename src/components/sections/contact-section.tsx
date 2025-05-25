@@ -1,6 +1,5 @@
-
 import { ContactForm } from "@/components/contact-form";
-import { Mail, Phone, MapPin, MessageSquareHeart } from "lucide-react";
+import { Mail, MapPin, MessageSquareHeart } from "lucide-react";
 
 const ContactSection = () => {
   return (
@@ -18,37 +17,41 @@ const ContactSection = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
-          <div className="space-y-8 bg-secondary p-8 sm:p-10 rounded-xl shadow-lg"> 
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-stretch">
+          {/* Left Card: Contact Details */}
+          <div className="flex flex-col h-full space-y-8 bg-primary text-primary-foreground p-8 sm:p-10 rounded-xl shadow-lg"> 
             <div>
-              <h3 className="text-2xl font-serif font-semibold text-foreground mb-4">Contact Details</h3>
-              <p className="text-muted-foreground mb-6">
+              <h3 className="text-2xl font-serif font-semibold text-primary-foreground mb-4">Contact Details</h3>
+              <p className="text-primary-foreground/90 mb-6">
                 Reach out to us via the form or through the channels below. We look forward to hearing from you.
               </p>
               <div className="space-y-4">
                 <div className="flex items-center gap-3">
-                  <Mail className="h-5 w-5 text-primary" />
-                  <a href="mailto:hello@lexamplify.com" className="text-foreground hover:text-primary transition-colors">
-                    hello@lexamplify.com
+                  <Mail className="h-5 w-5 text-primary-foreground" />
+                  <a href="mailto:contact@lexamplify.com" className="text-primary-foreground hover:text-primary-foreground/80 transition-colors">
+                    contact@lexamplify.com
                   </a>
                 </div>
-                <div className="flex items-center gap-3">
-                  <Phone className="h-5 w-5 text-primary" />
-                  <span className="text-foreground">(+91) XXXX-XXXXXX (Support line coming soon)</span>
-                </div>
+                {/* Phone number removed as per request */}
+                {/* <div className="flex items-center gap-3">
+                  <Phone className="h-5 w-5 text-primary-foreground" />
+                  <span className="text-primary-foreground">(+91) XXXX-XXXXXX (Support line coming soon)</span>
+                </div> */}
                  <div className="flex items-center gap-3">
-                  <MapPin className="h-5 w-5 text-primary" />
-                  <span className="text-foreground">Bengaluru, India (HQ)</span>
+                  <MapPin className="h-5 w-5 text-primary-foreground" />
+                  <span className="text-primary-foreground">New Delhi, India</span>
                 </div>
               </div>
             </div>
+            <div className="flex-grow"></div> {/* Spacer to push content up if card is taller */}
              <div>
-              <h3 className="text-2xl font-serif font-semibold text-foreground mb-4 mt-8">Connect Hours</h3>
-              <p className="text-muted-foreground">Monday - Friday: 9:00 AM - 6:00 PM (IST)</p>
-              <p className="text-muted-foreground">We aim to respond to all inquiries within 24 business hours.</p>
+              <h3 className="text-2xl font-serif font-semibold text-primary-foreground mb-4 mt-8">Connect Hours</h3>
+              <p className="text-primary-foreground/90">Monday - Friday: 9:00 AM - 6:00 PM (IST)</p>
+              <p className="text-primary-foreground/90">We aim to respond to all inquiries within 24 business hours.</p>
             </div>
           </div>
 
+          {/* Right Card: Form */}
           <div className="bg-card p-0 rounded-xl shadow-xl overflow-hidden border border-border"> 
             <ContactForm />
           </div>

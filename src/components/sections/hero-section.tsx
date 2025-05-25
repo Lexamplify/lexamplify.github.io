@@ -1,4 +1,3 @@
-
 'use client';
 
 import { Button } from "@/components/ui/button";
@@ -19,12 +18,11 @@ const HeroSection = () => {
           <Button asChild size="lg" className="text-lg py-3.5 px-8 transition-all duration-300 ease-in-out bg-primary hover:bg-primary/90 text-primary-foreground hover:shadow-primary/30 hover:scale-105 group font-body">
             <Link href="#contact">
               <>
-                Book a Demo
+                Join Waitlist
                 <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
               </>
             </Link>
           </Button>
-          {/* Secondary button removed as per request */}
         </div>
       </div>
     </section>
