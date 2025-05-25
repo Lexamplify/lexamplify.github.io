@@ -10,10 +10,10 @@ interface LexamplifyLogoProps extends HTMLAttributes<HTMLDivElement> {
 const LexamplifyLogo = ({ className, ...props }: LexamplifyLogoProps) => (
   <div className={className} {...props}>
     <Image
-      src="/lexamplify-logo.png" // Updated to local path
+      src="/lexamplify-logo.png" // Local path, assumes image is in public/lexamplify-logo.png
       alt="Lexamplify Logo"
-      width={886}  // Intrinsic width of the provided logo image
-      height={174} // Intrinsic height of the provided logo image
+      width={886}  // Intrinsic width of the logo image
+      height={174} // Intrinsic height of the logo image
       className="h-8 w-auto" // This controls the final display size
       data-ai-hint="company logo"
       priority // Add priority if the logo is above the fold (e.g., in the header)
