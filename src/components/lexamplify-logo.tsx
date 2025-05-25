@@ -9,9 +9,7 @@ interface LexamplifyLogoProps extends HTMLAttributes<HTMLDivElement> {
 const LexamplifyLogo = ({ className, ...props }: LexamplifyLogoProps) => (
   <div className={className} {...props}>
     <Image
-      // IMPORTANT: Replace this src with the actual path to your logo image
-      // For example, if your logo is in public/lexamplify-logo.png, use "/lexamplify-logo.png"
-      src="https://placehold.co/200x50.png" 
+      src="https://storage.googleapis.com/screenshots-prod/images/user_logo_c3622da6-c812-4862-8280-5309164c7d6f"
       alt="Lexamplify Logo"
       width={140} // Adjust width as needed, maintaining aspect ratio
       height={35}  // Adjust height as needed, maintaining aspect ratio
