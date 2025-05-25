@@ -11,9 +11,11 @@ export default {
   theme: {
   	extend: {
       fontFamily: {
-        sans: ['var(--font-geist-sans)', ...defaultTheme.fontFamily.sans],
-        serif: ['var(--font-times-new-roman)', ...defaultTheme.fontFamily.serif],
-        mono: ['var(--font-geist-mono)', ...defaultTheme.fontFamily.mono],
+        heading: ['var(--font-playfair-display)', ...defaultTheme.fontFamily.serif],
+        body: ['var(--font-dm-sans)', ...defaultTheme.fontFamily.sans],
+        sans: ['var(--font-dm-sans)', ...defaultTheme.fontFamily.sans], // Keep for compatibility
+        serif: ['var(--font-playfair-display)', ...defaultTheme.fontFamily.serif], // Keep for compatibility
+        mono: ['var(--font-geist-mono)', ...defaultTheme.fontFamily.mono], // Assuming Geist Mono is still desired
       },
   		colors: {
   			background: 'hsl(var(--background))',

@@ -1,6 +1,6 @@
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Navigation, Edit3, FolderGit2 } from "lucide-react"; // Example icons
+import { Navigation, Edit3, FolderGit2 } from "lucide-react"; 
 
 const benefits = [
   {
@@ -22,13 +22,13 @@ const benefits = [
 
 const IconBenefitsSection = () => {
   return (
-    <section id="icon-benefits" className="bg-secondary text-foreground">
+    <section id="icon-benefits" className="bg-[#E9EEF5] text-foreground"> 
       <div className="container mx-auto px-6">
         <div className="text-center mb-12 md:mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground">
+          <h2 className="text-3xl md:text-4xl font-bold text-primary font-heading">
             Effortless Navigation, Simple & Intuitive
           </h2>
-          <p className="text-lg text-muted-foreground mt-4 max-w-2xl mx-auto">
+          <p className="text-lg text-muted-foreground mt-4 max-w-2xl mx-auto font-body">
             Lexamplify is designed to be powerful yet easy to use, ensuring you can focus on your legal work, not on learning complex software.
           </p>
         </div>
@@ -39,10 +39,10 @@ const IconBenefitsSection = () => {
                 <div className="p-4 bg-primary/10 rounded-full mb-4 inline-block">
                   {benefit.icon}
                 </div>
-                <CardTitle className="text-xl font-semibold text-foreground">{benefit.title}</CardTitle>
+                <CardTitle className="text-xl font-semibold text-foreground font-heading">{benefit.title}</CardTitle>
               </CardHeader>
               <CardContent className="text-center px-6 pb-8">
-                <p className="text-muted-foreground text-sm">{benefit.description}</p>
+                <p className="text-muted-foreground text-sm font-body">{benefit.description}</p>
               </CardContent>
             </Card>
           ))}

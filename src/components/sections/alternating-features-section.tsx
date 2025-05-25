@@ -1,8 +1,8 @@
 
 import Image from "next/image";
-import { Button } from "@/components/ui/button";
-import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+// import { Button } from "@/components/ui/button"; // Button not used
+// import Link from "next/link"; // Link not used
+// import { ArrowRight } from "lucide-react"; // ArrowRight not used
 
 interface FeatureDetail {
   title: string;
@@ -11,7 +11,7 @@ interface FeatureDetail {
   imageUrl: string;
   imageAlt: string;
   dataAiHint: string;
-  learnMoreLink: string;
+  // learnMoreLink: string; // Removed
   imageLeft: boolean;
 }
 
@@ -23,7 +23,7 @@ const features: FeatureDetail[] = [
     imageUrl: "https://placehold.co/800x600.png",
     imageAlt: "Abstract representation of personalized legal AI",
     dataAiHint: "abstract legal tech",
-    learnMoreLink: "#",
+    // learnMoreLink: "#", // Removed
     imageLeft: false,
   },
   {
@@ -33,7 +33,7 @@ const features: FeatureDetail[] = [
     imageUrl: "https://placehold.co/800x600.png",
     imageAlt: "Illustration of rapid legal research",
     dataAiHint: "legal research data",
-    learnMoreLink: "#",
+    // learnMoreLink: "#", // Removed
     imageLeft: true,
   },
   {
@@ -43,7 +43,7 @@ const features: FeatureDetail[] = [
     imageUrl: "https://placehold.co/800x600.png",
     imageAlt: "Visual of AI assisting with document drafting",
     dataAiHint: "document automation AI",
-    learnMoreLink: "#",
+    // learnMoreLink: "#", // Removed
     imageLeft: false,
   },
    {
@@ -53,7 +53,7 @@ const features: FeatureDetail[] = [
     imageUrl: "https://placehold.co/800x600.png",
     imageAlt: "Dashboard for case management",
     dataAiHint: "case management software",
-    learnMoreLink: "#",
+    // learnMoreLink: "#", // Removed
     imageLeft: true,
   },
 ];
@@ -62,7 +62,7 @@ const AlternatingFeaturesSection = () => {
   return (
     <section id="alternating-features" className="bg-background text-foreground">
       <div className="container mx-auto px-6 space-y-16 md:space-y-24">
-        {features.map((feature, index) => (
+        {features.map((feature) => (
           <div
             key={feature.title}
             className={`grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center ${
@@ -74,21 +74,16 @@ const AlternatingFeaturesSection = () => {
                 feature.imageLeft ? "md:col-start-2" : ""
               } animate-fade-in`}
             >
-              <p className="text-primary font-semibold mb-2 uppercase tracking-wider text-sm">
+              <p className="text-primary font-semibold mb-2 uppercase tracking-wider text-sm font-body">
                 {feature.category}
               </p>
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4 font-heading">
                 {feature.title}
               </h2>
-              <p className="text-muted-foreground text-lg mb-6">
+              <p className="text-muted-foreground text-lg mb-6 font-body">
                 {feature.description}
               </p>
-              <Button asChild variant="link" className="text-primary p-0 hover:underline group">
-                <Link href={feature.learnMoreLink}>
-                  Learn More
-                  <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                </Link>
-              </Button>
+              {/* Learn More button removed */}
             </div>
             <div
               className={`relative aspect-[4/3] rounded-lg overflow-hidden shadow-xl animate-fade-in animation-delay-300 ${

@@ -1,27 +1,21 @@
 import type { Metadata } from 'next';
-import { Geist, Geist_Mono } from 'next/font/google';
-// Removed: import { Times_New_Roman } from 'next/font/google';
+import { Playfair_Display, DM_Sans } from 'next/font/google';
 import './globals.css';
 import { Toaster } from "@/components/ui/toaster";
 import Header from '@/components/layout/header';
 import Footer from '@/components/layout/footer';
 
-const geistSans = Geist({
-  variable: '--font-geist-sans',
+const playfairDisplay = Playfair_Display({
   subsets: ['latin'],
+  weight: ['400', '700', '900'], // Added more weights
+  variable: '--font-playfair-display',
 });
 
-const geistMono = Geist_Mono({
-  variable: '--font-geist-mono',
+const dmSans = DM_Sans({
   subsets: ['latin'],
+  weight: ['400', '500', '700'], // Added more weights
+  variable: '--font-dm-sans',
 });
-
-// Removed:
-// const timesNewRoman = Times_New_Roman({
-//   subsets: ['latin'],
-//   weight: ['400', '700'],
-//   variable: '--font-times-new-roman',
-// });
 
 export const metadata: Metadata = {
   title: 'Lexamplify — AI for Lawyers in India',
@@ -36,7 +30,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className={`${geistSans.variable} ${geistMono.variable} font-sans antialiased`}>
+      <body className={`${playfairDisplay.variable} ${dmSans.variable} font-body antialiased`}>
         <Header />
         {children}
         <Footer />

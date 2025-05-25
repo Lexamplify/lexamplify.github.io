@@ -52,8 +52,10 @@ const Footer = () => {
           </p>
           <Button asChild size="lg" className="group">
             <Link href="#contact">
-              Book a Demo
-              <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+              <>
+                Book a Demo
+                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+              </>
             </Link>
           </Button>
         </div>

@@ -3,42 +3,43 @@
 @tailwind utilities;
 
 body {
-  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+  font-family: var(--font-dm-sans), sans-serif; /* Default to DM Sans */
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif; /* Ensure sans-serif for headings */
+  font-family: var(--font-playfair-display), serif; /* Headings use Playfair Display */
 }
 
 @layer base {
   :root {
-    --background: 220 20% 97%; /* Very light, cool off-white */
-    --foreground: 225 30% 15%; /* Deep cool blue for text */
+    /* Refreshed Color Palette */
+    --background: 0 0% 100%; /* White */
+    --foreground: 215 30% 18%; /* Darker, slightly desaturated blue for text - close to #0D1B2A */
 
     --card: 0 0% 100%; /* White */
-    --card-foreground: 225 30% 15%; /* Deep cool blue text on cards */
+    --card-foreground: 215 30% 18%; 
 
     --popover: 0 0% 100%; /* White */
-    --popover-foreground: 225 30% 15%;
+    --popover-foreground: 215 30% 18%;
 
-    --primary: 225 65% 50%; /* Strong, professional blue */
+    --primary: 225 94% 19%; /* New Dark Blue: #031A60 */
     --primary-foreground: 0 0% 100%; /* White */
 
-    --secondary: 220 25% 90%; /* Lighter, cool gray */
-    --secondary-foreground: 225 40% 25%; /* Darker blue text on secondary */
+    --secondary: 220 30% 94%; /* Light cool grey-blue (for #E9EEF5 like backgrounds) */
+    --secondary-foreground: 215 25% 35%; /* Darker text for secondary backgrounds */
 
-    --muted: 220 20% 92%; /* Slightly darker cool gray for muted backgrounds */
+    --muted: 220 20% 96%; /* Slightly different light grey (for #F9FBFD like backgrounds) */
     --muted-foreground: 220 15% 50%; /* Medium cool gray for muted text */
 
-    --accent: 255 75% 60%; /* Vibrant, slightly softer purple */
+    --accent: 180 70% 45%; /* Vibrant teal/cyan */
     --accent-foreground: 0 0% 100%; /* White */
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 220 20% 85%; /* Cool gray for borders */
-    --input: 220 25% 94%; /* Very light cool gray for input backgrounds */
-    --ring: 225 65% 55%; /* Brighter blue for focus rings */
+    --border: 220 20% 88%; /* Light cool gray for borders */
+    --input: 220 25% 96%; /* Very light cool gray for input backgrounds */
+    --ring: 225 94% 29%; /* Ring color based on new primary */
 
     --radius: 0.5rem;
 
@@ -49,55 +50,55 @@ h1, h2, h3, h4, h5, h6 {
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
 
-    /* Sidebar specific colors */
-    --sidebar-background: 225 20% 98%; /* Adjusted for new theme */
-    --sidebar-foreground: 225 30% 20%; /* Adjusted for new theme */
-    --sidebar-primary: 225 65% 50%; /* Aligned with main primary */
-    --sidebar-primary-foreground: 0 0% 100%; /* Aligned with main primary-foreground */
-    --sidebar-accent: 220 25% 92%; /* Adjusted for new theme */
-    --sidebar-accent-foreground: 225 40% 25%; /* Adjusted for new theme */
-    --sidebar-border: 220 20% 88%; /* Adjusted for new theme */
-    --sidebar-ring: 225 65% 55%; /* Aligned with main ring */
+    /* Sidebar specific colors (can be adjusted based on new theme) */
+    --sidebar-background: 220 30% 98%; 
+    --sidebar-foreground: 215 30% 20%; 
+    --sidebar-primary: 225 94% 19%; /* Sidebar primary to match main primary */
+    --sidebar-primary-foreground: 0 0% 100%; 
+    --sidebar-accent: 220 30% 92%; 
+    --sidebar-accent-foreground: 215 25% 35%; 
+    --sidebar-border: 220 20% 90%; 
+    --sidebar-ring: 225 94% 29%; /* Sidebar ring to match main ring */
   }
 
   .dark {
-    --background: 225 20% 12%; /* Very dark, cool blue */
-    --foreground: 220 20% 92%; /* Light cool gray text */
+    --background: 225 20% 12%; 
+    --foreground: 220 20% 92%; 
 
-    --card: 225 20% 18%; /* Darker cool blue for cards */
+    --card: 225 20% 18%; 
     --card-foreground: 220 20% 92%;
 
     --popover: 225 20% 18%;
     --popover-foreground: 220 20% 92%;
 
-    --primary: 225 60% 55%; /* Vibrant blue for dark mode */
-    --primary-foreground: 0 0% 100%; /* White text on primary */
+    --primary: 225 80% 70%; /* Lighter blue for dark mode primary */
+    --primary-foreground: 225 94% 10%; /* Dark text for contrast on lighter blue */
 
-    --secondary: 225 20% 25%; /* Darker shade for secondary */
+    --secondary: 225 20% 25%; 
     --secondary-foreground: 220 20% 92%;
 
-    --muted: 225 15% 30%; /* Dark gray for muted backgrounds */
-    --muted-foreground: 220 15% 70%; /* Lighter gray for muted text */
+    --muted: 225 15% 30%; 
+    --muted-foreground: 220 15% 70%; 
 
-    --accent: 255 70% 65%; /* Vibrant purple for dark mode */
-    --accent-foreground: 0 0% 100%; /* White text on accent */
+    --accent: 180 70% 60%; /* Lighter teal for dark mode accent */
+    --accent-foreground: 0 0% 10%; /* Dark text for dark mode accent button */
     
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 225 15% 35%; /* Darker cool gray for borders */
-    --input: 225 15% 25%; /* Dark cool gray for inputs */
-    --ring: 225 60% 60%; /* Brighter blue for rings in dark mode */
+    --border: 225 15% 35%; 
+    --input: 225 15% 25%; 
+    --ring: 225 80% 75%; /* Ring for dark mode, based on dark primary */
 
     /* Dark Sidebar specific colors */
     --sidebar-background: 225 20% 10%;
     --sidebar-foreground: 220 20% 88%;
-    --sidebar-primary: 225 60% 55%;
-    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-primary: 225 80% 70%; /* Sidebar primary to match main dark primary */
+    --sidebar-primary-foreground: 225 94% 10%;
     --sidebar-accent: 225 15% 22%;
     --sidebar-accent-foreground: 220 20% 88%;
     --sidebar-border: 225 15% 28%;
-    --sidebar-ring: 225 60% 60%;
+    --sidebar-ring: 225 80% 75%; /* Sidebar ring to match main dark ring */
   }
 }
 
@@ -111,6 +112,12 @@ h1, h2, h3, h4, h5, h6 {
   }
   section {
     @apply py-16 md:py-24;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading;
+  }
+  p, span, div, li, a, button, label, input, textarea, select { /* Apply body font more broadly */
+    @apply font-body;
   }
 }
 

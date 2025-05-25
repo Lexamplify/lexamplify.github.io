@@ -34,7 +34,7 @@ const featureItems: FeatureItem[] = [
   },
   {
     id: 'legal-drafting',
-    icon: <Brain className="h-6 w-6 text-primary" />, // Using Brain for AI drafting
+    icon: <Brain className="h-6 w-6 text-primary" />, 
     title: 'AI Legal Drafting',
     description: 'Enhance your drafting with AI-powered suggestions.',
     longDescription: 'Go beyond templates with AI that suggests relevant clauses, checks for consistency, and helps refine your legal arguments within documents. Improve the quality and coherence of your legal writing with intelligent assistance.',
@@ -85,7 +85,7 @@ const DetailedFeaturesSection = () => {
     <section id="detailed-features" className="bg-background text-foreground">
       <div className="container mx-auto px-6">
         <div className="text-center mb-12 md:mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-3">
+          <h2 className="text-3xl md:text-4xl font-bold text-primary mb-3">
             We have your back the whole way
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
@@ -132,12 +132,14 @@ const DetailedFeaturesSection = () => {
                     className="animate-fade-in"
                   />
                 </div>
-                <h3 className="text-2xl font-bold text-foreground mb-3">{activeFeature.title}</h3>
+                <h3 className="text-2xl font-bold text-primary mb-3">{activeFeature.title}</h3>
                 <p className="text-muted-foreground mb-6 text-base leading-relaxed">{activeFeature.longDescription}</p>
                 <Button asChild variant="default" className="group">
                   <Link href={activeFeature.learnMoreLink}>
-                    Learn More about {activeFeature.title}
-                    <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                    <>
+                      Learn More about {activeFeature.title}
+                      <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                    </>
                   </Link>
                 </Button>
               </div>

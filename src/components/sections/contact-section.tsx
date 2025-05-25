@@ -4,13 +4,13 @@ import { Mail, Phone, MapPin, MessageSquareHeart } from "lucide-react";
 
 const ContactSection = () => {
   return (
-    <section id="contact" className="bg-background"> {/* Changed from bg-secondary */}
+    <section id="contact" className="bg-background"> 
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <div className="flex justify-center mb-4">
              <MessageSquareHeart className="h-12 w-12 text-primary" />
            </div>
-          <h2 className="text-4xl md:text-5xl font-serif font-bold text-foreground">
+          <h2 className="text-4xl md:text-5xl font-serif font-bold text-primary">
             Ready to Amplify Your Practice?
           </h2>
           <p className="text-lg text-muted-foreground mt-4 max-w-2xl mx-auto">
@@ -19,7 +19,7 @@ const ContactSection = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
-          <div className="space-y-8 bg-secondary p-8 sm:p-10 rounded-xl shadow-lg"> {/* Added bg and padding */}
+          <div className="space-y-8 bg-secondary p-8 sm:p-10 rounded-xl shadow-lg"> 
             <div>
               <h3 className="text-2xl font-serif font-semibold text-foreground mb-4">Contact Details</h3>
               <p className="text-muted-foreground mb-6">
@@ -49,7 +49,7 @@ const ContactSection = () => {
             </div>
           </div>
 
-          <div className="bg-card p-0 rounded-xl shadow-xl overflow-hidden border border-border"> {/* Moved form to card for consistency */}
+          <div className="bg-card p-0 rounded-xl shadow-xl overflow-hidden border border-border"> 
             <ContactForm />
           </div>
         </div>
