@@ -12,9 +12,9 @@ const LexamplifyLogo = (props: SVGProps<SVGSVGElement>) => (
         .logo-text-lexamplify {
           font-family: var(--font-playfair-display), serif; /* Use Playfair Display for serif look */
           font-size: 36px; /* Adjust as needed */
-          font-weight: 400; /* Regular weight for Playfair Display */
+          font-weight: 700; /* Bolder weight to match image */
           fill: #000000; /* Black color for text to match image */
-          letter-spacing: 0.25px; /* Slight adjustment for Playfair */
+          letter-spacing: 0.5px; /* Adjusted letter spacing */
         }
         .triangle-primary {
           fill: hsl(var(--primary)); /* Dark blue part of L */
