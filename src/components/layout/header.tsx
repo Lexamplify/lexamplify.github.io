@@ -1,3 +1,4 @@
+
 'use client';
 import Link from 'next/link';
 import LexamplifyLogo from '@/components/lexamplify-logo';
@@ -19,7 +20,7 @@ const Header = () => {
   };
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border/20 bg-white/80 backdrop-blur-lg supports-[backdrop-filter]:bg-white/60">
+    <header className="sticky top-0 z-50 w-full border-b border-border/20 bg-white/80 backdrop-blur-lg supports-[backdrop-filter]:bg-white/60 shadow-lg">
       <div className="container flex h-20 max-w-screen-2xl items-center justify-between px-6 md:px-10 lg:px-16 xl:px-20"> {/* Increased padding */}
         <Link href="/" className="flex items-center space-x-2" onClick={handleLinkClick}>
           <LexamplifyLogo />

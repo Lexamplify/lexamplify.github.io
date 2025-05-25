@@ -9,7 +9,7 @@ const HeroSection = () => {
   return (
     <section id="home" className="bg-primary text-white py-28 md:py-48"> 
       <div className="container mx-auto px-6 text-center relative z-10">
-        <h1 className="text-4xl sm:text-5xl md:text-6xl mb-6 animate-fade-in leading-tight max-w-3xl mx-auto font-heading">
+        <h1 className="text-4xl sm:text-5xl md:text-6xl mb-6 animate-fade-in leading-normal max-w-3xl mx-auto font-heading">
           Amplify Your Legal Practice with AI
         </h1>
         <p className="text-lg md:text-xl text-neutral-300 mb-10 max-w-2xl mx-auto animate-slide-in-up animation-delay-300 font-body"> 
@@ -31,3 +31,4 @@ const HeroSection = () => {
 };
 
 export default HeroSection;
+
