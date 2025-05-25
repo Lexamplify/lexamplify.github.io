@@ -30,8 +30,6 @@ import { useState } from "react";
 const formSchema = z.object({
   name: z.string().min(2, { message: "Name must be at least 2 characters." }).max(100, {message: "Name seems too long."}),
   email: z.string().email({ message: "Please enter a valid email address." }),
-  organization: z.string().optional(),
-  role: z.string().optional(),
   inquiryType: z.enum(["Demo", "Waitlist", "Partnership", "Feedback", "Other"]),
   message: z.string().min(10, { message: "Message must be at least 10 characters." }).max(1000, { message: "Message must not exceed 1000 characters." }),
 });
@@ -57,8 +55,6 @@ export function ContactForm() {
     defaultValues: {
       name: "",
       email: "",
-      organization: "",
-      role: "",
       inquiryType: "Waitlist",
       message: "",
     },
@@ -124,34 +120,7 @@ export function ContactForm() {
             )}
           />
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-          <FormField
-            control={form.control}
-            name="organization"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel className="text-card-foreground">Organization (Optional)</FormLabel>
-                <FormControl>
-                  <Input placeholder="e.g., Sharma & Associates" {...field} className="bg-input focus:ring-primary" />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-          <FormField
-            control={form.control}
-            name="role"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel className="text-card-foreground">Your Role (Optional)</FormLabel>
-                <FormControl>
-                  <Input placeholder="e.g., Advocate, Partner" {...field} className="bg-input focus:ring-primary" />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-        </div>
+        {/* Organization and Role fields removed */}
         <FormField
           control={form.control}
           name="inquiryType"

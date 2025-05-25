@@ -33,11 +33,6 @@ const ContactSection = () => {
                     contact@lexamplify.com
                   </a>
                 </div>
-                {/* Phone number removed as per request */}
-                {/* <div className="flex items-center gap-3">
-                  <Phone className="h-5 w-5 text-primary-foreground" />
-                  <span className="text-primary-foreground">(+91) XXXX-XXXXXX (Support line coming soon)</span>
-                </div> */}
                  <div className="flex items-center gap-3">
                   <MapPin className="h-5 w-5 text-primary-foreground" />
                   <span className="text-primary-foreground">New Delhi, India</span>
@@ -45,11 +40,7 @@ const ContactSection = () => {
               </div>
             </div>
             <div className="flex-grow"></div> {/* Spacer to push content up if card is taller */}
-             <div>
-              <h3 className="text-2xl font-serif font-semibold text-primary-foreground mb-4 mt-8">Connect Hours</h3>
-              <p className="text-primary-foreground/90">Monday - Friday: 9:00 AM - 6:00 PM (IST)</p>
-              <p className="text-primary-foreground/90">We aim to respond to all inquiries within 24 business hours.</p>
-            </div>
+            {/* Connect Hours section removed */}
           </div>
 
           {/* Right Card: Form */}
@@ -63,3 +54,4 @@ const ContactSection = () => {
 };
 
 export default ContactSection;
+

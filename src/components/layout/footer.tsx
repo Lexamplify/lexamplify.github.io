@@ -4,42 +4,15 @@ import LexamplifyLogo from '@/components/lexamplify-logo';
 import { ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input'; // Added Input import
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
-  // const productLinks = [
-  //   { href: '#alternating-features', label: 'AI Drafting' },
-  //   { href: '#detailed-features', label: 'Case Management' },
-  //   { href: '#detailed-features', label: 'Legal Research' },
-  //   { href: '#', label: 'Pricing' },
-  // ];
-
-  // const companyLinks = [
-  //   { href: '#', label: 'About Us' },
-  //   { href: '#testimonials', label: 'Testimonials' },
-  //   { href: '#', label: 'Careers' },
-  //   { href: '#', label: 'Blog' },
-  // ];
-  
-  // const resourcesLinks = [
-  //   { href: '#', label: 'Help Center' },
-  //   { href: '#', label: 'API Documentation' },
-  //   { href: '#', label: 'System Status' },
-  // ];
-
   const legalLinks = [
     { href: '#', label: 'Privacy Policy' },
     { href: '#', label: 'Terms of Service' },
-    // { href: '#', label: 'Cookie Policy' }, // Commented out Cookie Policy
   ];
-
-  // const socialLinks = [
-  //   { href: '#', label: 'Twitter', icon: <Twitter size={20} /> },
-  //   { href: '#', label: 'LinkedIn', icon: <Linkedin size={20} /> },
-  //   { href: '#', label: 'Facebook', icon: <Facebook size={20} /> },
-  // ];
-
 
   return (
     <footer className="border-t border-border/40 bg-muted/40 text-foreground">
@@ -51,14 +24,19 @@ const Footer = () => {
           <p className="text-muted-foreground mb-6 max-w-xl mx-auto">
             Be the first to know when Lexamplify launches. Get exclusive early access and updates.
           </p>
-          <Button asChild size="lg" className="group">
-            <Link href="#contact">
+          <div className="flex flex-col sm:flex-row items-stretch justify-center gap-3 sm:gap-4 max-w-lg mx-auto">
+            <Input 
+              type="email" 
+              placeholder="Enter your email address" 
+              className="flex-grow bg-background border-border focus:ring-primary py-3 px-4 text-base" 
+            />
+            <Button type="submit" size="lg" className="group shrink-0">
               <>
                 Join Waitlist
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </>
-            </Link>
-          </Button>
+            </Button>
+          </div>
         </div>
 
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-3"> {/* Adjusted grid for simpler layout */}
@@ -67,7 +45,8 @@ const Footer = () => {
             <p className="mt-4 text-sm text-muted-foreground max-w-xs">
               Empowering India's legal professionals with AI-driven tools for enhanced efficiency and insight.
             </p>
-            {/* <div className="mt-6 flex space-x-4">
+            {/* Social links commented out
+            <div className="mt-6 flex space-x-4">
               {socialLinks.map(social => (
                 <Link key={social.label} href={social.href} aria-label={social.label} className="text-muted-foreground hover:text-primary transition-colors">
                   {social.icon}
