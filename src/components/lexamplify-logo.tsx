@@ -1,3 +1,4 @@
+
 import Image from 'next/image';
 import type { HTMLAttributes } from 'react';
 
@@ -9,11 +10,11 @@ interface LexamplifyLogoProps extends HTMLAttributes<HTMLDivElement> {
 const LexamplifyLogo = ({ className, ...props }: LexamplifyLogoProps) => (
   <div className={className} {...props}>
     <Image
-      src="https://storage.googleapis.com/screenshots-prod/images/user_logo_c3622da6-c812-4862-8280-5309164c7d6f"
+      src="/lexamplify-logo.png" // Updated to local path
       alt="Lexamplify Logo"
-      width={140} // Adjust width as needed, maintaining aspect ratio
-      height={35}  // Adjust height as needed, maintaining aspect ratio
-      className="h-8 w-auto" // This will be overridden by parent if className is passed
+      width={886}  // Intrinsic width of the provided logo image
+      height={174} // Intrinsic height of the provided logo image
+      className="h-8 w-auto" // This controls the final display size
       data-ai-hint="company logo"
       priority // Add priority if the logo is above the fold (e.g., in the header)
     />
