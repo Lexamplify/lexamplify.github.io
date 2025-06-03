@@ -77,12 +77,7 @@ const Footer = () => {
         </div>
 
         <div className="mt-12 border-t border-border/40 pt-8 text-center animate-fade-in animation-delay-600">
-          <p className="text-xs text-muted-foreground">
-            &copy; {currentYear} Lexamplify Technologies Pvt. Ltd. All rights reserved.
-          </p>
-          <p className="text-xs text-muted-foreground/70 mt-1">
-            Lexamplify provides AI-powered tools for legal professionals. It is not a substitute for legal advice.
-          </p>
+          {/* Removed orphaned </p> tag from here */}
         </div>
       </div>
     </footer>
