@@ -78,7 +78,7 @@ export function ContactForm() {
           variant: "destructive",
         });
       }
-    } catch (error) {
+    } catch (error:string) {
       toast({
         title: "Error",
         description: "An unexpected error occurred. Please try again later.",

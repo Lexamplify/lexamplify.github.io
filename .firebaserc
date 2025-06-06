@@ -1,0 +1,15 @@
+{
+  "projects": {
+    "default": "lexamplify-landing-2b3c9"
+  },
+  "targets": {
+    "lexamplify-landing-2b3c9": {
+      "hosting": {
+        "landing": [
+          "lexamplify"
+        ]
+      }
+    }
+  },
+  "etags": {}
+}
